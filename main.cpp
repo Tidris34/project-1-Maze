@@ -20,6 +20,6 @@ int main() {
     for (int i = 0; i < rows; ++i) {
         delete[] maze[i];
     }
-
+//nigger
     return 0;
 }
