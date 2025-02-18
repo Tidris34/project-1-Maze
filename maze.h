@@ -39,30 +39,30 @@ public:
         this->num_cols = num_cols;
     }
 
-    // Maze(const std::string& maze_filename) {
-    //     std::ifstream input(maze_filename);
-    //     std::vector<std::string> lines;
+    Maze(const std::string& maze_filename) {
+        std::ifstream input(maze_filename);
+        std::vector<std::string> lines;
 
-    //     while (!input.eof()) {
-    //         std::string current_line;
-    //         std::getline(input, current_line);
-    //         lines.push_back(current_line);
-    //     }
+        while (!input.eof()) {
+            std::string current_line;
+            std::getline(input, current_line);
+            lines.push_back(current_line);
+        }
 
-    //     num_rows = lines.size();
-    //     num_cols = lines[0].length();
+        num_rows = lines.size();
+        num_cols = lines[0].length();
 
-    //     maze = new bool*[num_rows];
-    //     for (int i = 0; i < num_rows; i++)
-    //         maze[i] = new bool[num_cols];
+        maze = new bool*[num_rows];
+        for (int i = 0; i < num_rows; i++)
+            maze[i] = new bool[num_cols];
 
-    //     for (int i = 0; i < num_rows; i++) {
-    //         for (int j = 0; j < num_cols; j++) {
-    //             char c = lines[i][j];
-    //             maze[i][j] = (c == ' ');
-    //         }
-    //     }
-    // }
+        for (int i = 0; i < num_rows; i++) {
+            for (int j = 0; j < num_cols; j++) {
+                char c = lines[i][j];
+                maze[i][j] = (c == ' ');
+            }
+        }
+    }
 
     ~Maze() {
         for (int i = 0; i < num_rows; i++)
